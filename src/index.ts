@@ -17,13 +17,13 @@ export class RouterBranch {
                     err && next(err);
                     await step(req, res, nextStep)
                 };
-            }, next)(req, res, next);
+            }, next)();
         };
     }
 
     private validate(branch: string) {
         if (!this.routers.has(branch)) {
-            throw Error;
+            throw new Error('Branch is not exist!');
         }
     }
 }
