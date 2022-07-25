@@ -4,5 +4,5 @@
 
 This npm package provides an Express middleware to conditionally choose different branches of middlewares in route.
 
-![the usage of the package](./router-branch-diagram.png)
+![the usage of the package](https://github.com/raymondyan/express-route-branch/blob/main/router-branch-diagram.png?raw=true)
 
