@@ -12,6 +12,11 @@
   },
   "author": "Jiayang Yan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymondyan/express-route-branch.git"
+  },
+  "homepage": "https://github.com/raymondyan/express-route-branch#readme",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "jest": "^28.1.3",
