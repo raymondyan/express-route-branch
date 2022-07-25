@@ -1,11 +1,12 @@
 {
-  "name": "express-route-branch",
-  "version": "1.0.0",
+  "name": "express-route-branch-beta",
+  "version": "0.0.9",
   "description": "",
-  "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "ci": "npm run test && npm run build",
+    "release": "npm run ci && npm publish"
   },
   "author": "Jiayang Yan",
   "license": "MIT",
@@ -18,5 +19,8 @@
   "dependencies": {
     "@types/express": "^4.17.13",
     "@types/jest": "^28.1.6"
-  }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"]
 }

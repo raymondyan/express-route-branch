@@ -1,17 +1,17 @@
-import {RouterBranch} from "../src";
 import {Handler, Request, Response} from "express";
+import {routerBranch} from "../dist";
 
 describe('Test express branch', () => {
-    it('should success', () => {
+    it('should success', async () => {
         let middlewareStep = jest.fn();
-        let routerBranch = new RouterBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]));
-        routerBranch.path('BranchA')({} as Request, {} as Response, jest.fn());
+        await routerBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]))({body: {branch: 'BranchA'}} as Request, {} as Response, jest.fn());
         expect(middlewareStep).toBeCalledTimes(1);
     });
 
-    it('should fail', () => {
+    it('should fail', async () => {
         let middlewareStep = jest.fn();
-        let routerBranch = new RouterBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]));
-        expect(() => routerBranch.path('BranchB')).toThrow('Branch is not exist!');
+        let next = jest.fn();
+        await routerBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]))({body: {branch: 'BranchB'}} as Request, {} as Response, next);
+        expect(next).toBeCalledWith(new Error('Branch is not exist!'));
     });
 })
