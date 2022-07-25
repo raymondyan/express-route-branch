@@ -3,9 +3,11 @@
   "version": "0.0.9",
   "description": "",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean:dist && tsc && npm run copyDeclaration",
     "test": "jest",
-    "ci": "npm run test && npm run build",
+    "clean:dist": "rm -rf dist/",
+    "copyDeclaration": "cp src/index.d.ts dist/",
+    "ci": "npm run build && npm run test",
     "release": "npm run ci && npm publish"
   },
   "author": "Jiayang Yan",
