@@ -1,6 +1,6 @@
 {
   "name": "express-router-branch",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "scripts": {
     "build": "npm run clean:dist && tsc && npm run copyDeclaration",

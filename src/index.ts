@@ -1,11 +1,12 @@
 import {Handler, NextFunction, Request, Response} from 'express';
+import {Options} from "./types/Options";
 
 export class RouterBranch {
-    static routerBranch(routers: Map<string, Handler[]>, options ?: Record<string, string>) {
+    static routerBranch(routers: Map<string, Handler[]>, options ?: Options) {
         return async (req: Request, res: Response, next: NextFunction): Promise<any> => {
             const branchField = options?.field || "branch"
             let branch = req?.body && req?.body[branchField];
-            branch = branch || options?.default;
+            branch = branch || options?.defaultBranch;
             if (!branch) {
                 next(new Error('Must provide branch in request body or provide a default value'));
                 return;

@@ -16,7 +16,7 @@ describe('Test express branch', () => {
 
     it('should success with default', async () => {
         let middlewareStep = jest.fn();
-        await routerBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]), {default: 'BranchA'})({} as Request, {} as Response, jest.fn());
+        await routerBranch(new Map<string, Handler[]>([['BranchA', [middlewareStep]]]), {defaultBranch: 'BranchA'})({} as Request, {} as Response, jest.fn());
         expect(middlewareStep).toBeCalledTimes(1);
     });
 
