@@ -1,6 +1,6 @@
 {
-  "name": "express-route-branch-beta",
-  "version": "0.1.0",
+  "name": "express-router-branch",
+  "version": "1.0.0",
   "description": "",
   "scripts": {
     "build": "npm run clean:dist && tsc && npm run copyDeclaration",
@@ -14,9 +14,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raymondyan/express-route-branch.git"
+    "url": "git+https://github.com/raymondyan/express-router-branch.git"
   },
-  "homepage": "https://github.com/raymondyan/express-route-branch#readme",
+  "homepage": "https://github.com/raymondyan/express-router-branch#readme",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "jest": "^28.1.3",
